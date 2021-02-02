@@ -1,12 +1,22 @@
-gamerunning = True
+# we add the recording array to help us record all the actions
 
+gamerunning = True
+signal = []
 while gamerunning:
-    signal = input ().lower()
-    if signal == "start":
-        print ("Car started ... Ready to go")
-    elif signal == "stop":
-        print ("Car stopped")
-    elif signal == "quit":
+    newsignal = input ().lower()
+    signal.append(newsignal)
+    print(signal)
+    if newsignal == "start":
+        if signal[-2] == "start":
+            print("already start")
+        else:
+            print ("Car started ... Ready to go")
+    elif newsignal == "stop":
+        if signal[-2] == "stop":
+            print("already stop")
+        else:
+            print ("Car stopped")
+    elif newsignal == "quit":
         gamerunning = False
     else:
         print ("I don't understand that..")
