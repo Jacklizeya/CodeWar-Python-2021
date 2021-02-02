@@ -1,0 +1,23 @@
+gamerunning = True
+signal=["Stop", "Stop"]
+
+while gamerunning:
+    print(signal)
+    newsignal = input ().lower()
+      
+    if newsignal == "start":
+        signal.append(newsignal)
+        if signal[-2] == "start":
+            print("already start")
+        else:
+            print ("Car started ... Ready to go")
+    elif newsignal == "stop":
+        signal.append(newsignal)
+        if signal[-2] == "stop":
+            print("already stop")
+        else:
+            print ("Car stopped")
+    elif newsignal == "quit":
+        gamerunning = False
+    else:
+        print ("I don't understand that..")
